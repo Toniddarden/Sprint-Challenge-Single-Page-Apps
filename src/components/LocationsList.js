@@ -6,7 +6,8 @@ export default function LocationsList() {
   const [location, setLocation] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://rickandmortyapi.com/api/location/").then(res => {
+    Axios.get(`https://rickandmortyapi.com/api/location/`)
+    .then(res => {
       setLocation(res.data.results);
     });
   }, []);
@@ -14,16 +15,19 @@ export default function LocationsList() {
   console.log(location);
   return (
     <section className="">
-      {location.map(loc => {
+      {location.map(local => {
         return (
           <LocationCard
-            name={loc.name}
-            type={loc.image}
-            dimension={loc.location}
-            residents={loc.status}
+            key={local.key}
+            type={local.type}
+            name={local.name}
+            dimension={local.dimension}
+            residents={local.residents}
           />
         );
       })}
     </section>
   );
 }
+
+
