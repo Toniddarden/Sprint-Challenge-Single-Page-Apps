@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, NavLink } from "react-router-dom";
 import ReactDOM from "react-dom";
+import styled from "styled-components";
 
 import Header from "./components/Header.js";
 import CharacterCard from "./components/CharacterCard";
@@ -10,21 +11,30 @@ import LocationList from "./components/LocationsList";
 import SearchForm from "./components/SearchForm";
 import WelcomePage from "./components/WelcomePage";
 
+const Button = styled.button`
+  color: black;
+  border-color: purple;
+  background-color: pink;
+  padding: 10px;
+  font-weight: bold;
+  margin: 10px;
+`;
+
 export default function App() {
   return (
     <main>
       <Header />
 
       <NavLink exact to="/" activeClassName="">
-        Home
+        <Button>Home</Button>
       </NavLink>
       <div />
       <NavLink exact to="/characters" activeClassName="">
-        Characters
+        <Button>Characters</Button>
       </NavLink>
       <div />
       <NavLink exact to="/location" activeClassName="">
-        Locations
+        <Button>Locations</Button>
       </NavLink>
 
       <Route exact path="/" component={WelcomePage} />
@@ -36,6 +46,6 @@ export default function App() {
 
 // Explain benefit(s) using client-side routing?
 
-// Answr: Client side routing is ran and passed through the clients local machine (browser)! It allows for faster routing without refresh and 
-// quicker runtime. The client can create and store data in realtime without waiting for the server to respond it does it automatically becauses 
-// its done on their local browser. Each page is rendered through a route and always sent back to the parent w/o refresh. 
+// Answr: Client side routing is ran and passed through the clients local machine (browser)! It allows for faster routing without refresh and
+// quicker runtime. The client can create and store data in realtime without waiting for the server to respond it does it automatically becauses
+// its done on their local browser. Each page is rendered through a route and always sent back to the parent w/o refresh.

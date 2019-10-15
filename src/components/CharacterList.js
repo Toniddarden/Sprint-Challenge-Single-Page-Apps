@@ -10,15 +10,19 @@ export default function CharacterList() {
     Axios.get('https://rickandmortyapi.com/api/character/')
       .then((res) => {
         setCharacters(res.data.results);
+console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
       })
   }, []);
 
   console.log(characters);
   return (
-    <section className="">
+    <section className="char">
       {characters.map((char) => {
         return (
-          <CharacterCard key={char.name} name={char.name} image={char.image} location={char.location} status={char.status} origin={char.origin} />
+          <CharacterCard key={char.id} name={char.name} image={char.image} location={char.location} status={char.status} origin={char.origin} />
         )
       })}
     </section>
