@@ -1,15 +1,12 @@
 import React from "react";
 import { Route, NavLink } from "react-router-dom";
-import ReactDOM from "react-dom";
 import styled from "styled-components";
 
 import Header from "./components/Header.js";
-import CharacterCard from "./components/CharacterCard";
 import CharacterList from "./components/CharacterList";
 import LocationCard from "./components/LocationCard";
-import LocationList from "./components/LocationsList";
-import SearchForm from "./components/SearchForm";
 import WelcomePage from "./components/WelcomePage";
+
 
 const Button = styled.button`
   color: black;
@@ -24,7 +21,6 @@ export default function App() {
   return (
     <main>
       <Header />
-
       <NavLink exact to="/" activeClassName="">
         <Button>Home</Button>
       </NavLink>

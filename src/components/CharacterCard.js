@@ -15,7 +15,7 @@ background-color: papayawhip;
 export default function CharacterCard(props) {
   return(
   <Wrapper className='char'>
-    <img src={props.image} />
+    <img src={props.image} alt='Rick' />
     <UnLi>
       <li>{props.name}</li>
       <li>{props.status}</li>
